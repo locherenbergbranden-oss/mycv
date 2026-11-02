@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="The personal CV and portfolio of Branden Locherenberg, showcasing his experience, skills, and web development projects.">
+
+    <title>Branden Locherenberg | Personal CV</title>
+
+    <style>
+        /* ===== GENERAL STYLING ===== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #243247;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        /* ===== NAVIGATION ===== */
+
+        nav {
+            background: #102b40;
+            color: white;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #55ddb0;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav ul a:hover,
+        nav ul a:focus {
+            color: #55ddb0;
+        }
+
+        /* ===== HERO SECTION ===== */
+
+        .hero {
+            background: linear-gradient(135deg, #102b40, #194c60);
+            color: white;
+            padding: 95px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .eyebrow {
+            color: #55ddb0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #55ddb0;
+        }
+
+        .hero-description {
+            color: #d5e3ed;
+            font-size: 17px;
+            max-width: 620px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: #55ddb0;
+            color: #102b40;
+        }
+
+        .button-primary:hover {
+            background: #83edc9;
+        }
+
+        .button-outline {
+            border: 1px solid #b9d0df;
+            color: white;
+        }
+
+        .button-outline:hover {
+            background: #ffffff15;
+        }
+
+        .hero-card {
+            background: #ffffff10;
+            border: 1px solid #ffffff25;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .hero-card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card p {
+            color: #d5e3ed;
+            margin-bottom: 12px;
+        }
+
+        .availability {
+            display: inline-block;
+            background: #55ddb01c;
+            color: #83edc9;
+            border: 1px solid #55ddb055;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+
+        main {
+            padding: 35px 0;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-heading {
+            margin-bottom: 24px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 5px;
+        }
+
+        .section-heading h2 {
+            color: #102b40;
+            font-size: 30px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            max-width: 700px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 8px 25px #102b4008;
+        }
+
+        /* ===== ABOUT ME ===== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .values-card {
+            background: #edf8f4;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .values-card h3 {
+            color: #12684f;
+            margin-bottom: 12px;
+        }
+
+        .values-card ul {
+            padding-left: 20px;
+        }
+
+        .values-card li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== SKILLS ===== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            border: 1px solid #e2e8f0;
+            padding: 22px;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .skill-card .icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card h3 {
+            color: #102b40;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 22px;
+        }
+
+        .tag {
+            background: #e3f7ef;
+            color: #12684f;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* ===== EXPERIENCE ===== */
+
+        .experience-card {
+            border-left: 3px solid #55ddb0;
+            padding: 5px 0 5px 24px;
+            margin-bottom: 28px;
+        }
+
+        .experience-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-card h3 {
+            color: #102b40;
+            font-size: 21px;
+        }
+
+        .company {
+            color: #147d64;
+            font-weight: bold;
+        }
+
+        .date {
+            color: #64748b;
+            font-size: 14px;
+            margin: 5px 0 12px;
+        }
+
+        .experience-card ul {
+            padding-left: 22px;
+            margin-top: 10px;
+        }
+
+        .experience-card li {
+            margin-bottom: 7px;
+        }
+
+        /* ===== EDUCATION ===== */
+
+        .education-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 15px;
+        }
+
+        .education-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-card h3 {
+            color: #102b40;
+            margin-bottom: 5px;
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            background: white;
+        }
+
+        .project-card h3 {
+            color: #102b40;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: #147d64;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== LANGUAGES ===== */
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .language {
+            flex: 1 1 180px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .language strong {
+            display: block;
+            color: #102b40;
+            margin-bottom: 4px;
+        }
+
+        .language span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-panel {
+            background: #102b40;
+            color: white;
+        }
+
+        .contact-panel .section-heading h2 {
+            color: white;
+        }
+
+        .contact-panel .section-heading p {
+            color: #d5e3ed;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .contact-item {
+            background: #ffffff0c;
+            border: 1px solid #ffffff20;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .contact-item h3 {
+            color: #55ddb0;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: white;
+            overflow-wrap: anywhere;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #55ddb0;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #0b2030;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 24px 15px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #55ddb0;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        @media (max-width: 760px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+
+            .panel {
+                padding: 20px;
+            }
+        }
+
+        /* Respect reduced-motion preferences. */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav aria-label="Main navigation">
+        <div class="container nav-content">
+
+            <a class="logo" href="#home">
+                Branden.
+            </a>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero" id="home">
+        <div class="container hero-content">
+
+            <div>
+                <p class="eyebrow">Welcome to my portfolio</p>
+
+                <h1>
+                    Hi, I'm Branden <span>Locherenberg.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm a motivated, adaptable individual with experience
+                    in solar energy and youth rugby coaching. I'm also
+                    developing my web development skills and enjoy
+                    learning, solving problems, and taking on new challenges.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="button button-primary" href="#experience">
+                        Explore My Experience
+                    </a>
+
+                    <a class="button button-outline" href="#contact">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <aside class="hero-card">
+                <h2>A Little About Me</h2>
+
+                <p>
+                    📍 Based in Brits, North West, South Africa
+                </p>
+
+                <p>
+                    ☀️ Experience in solar energy
+                </p>
+
+                <p>
+                    🏉 Rugby coaching and mentoring
+                </p>
+
+                <p>
+                    💻 Learning web development
+                </p>
+
+                <span class="availability">
+                    Open to learning and new opportunities
+                </span>
+            </aside>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- ABOUT -->
+
+        <section id="about">
+            <div class="section-heading">
+                <p class="eyebrow">Get to know me</p>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="panel about-grid">
+
+                <div class="about-text">
+                    <p>
+                        I'm Branden Locherenberg, an enthusiastic and
+                        open-minded individual who enjoys learning new
+                        things, embracing challenges, and finding
+                        practical solutions to problems. I value
+                        communication, teamwork, and building positive
+                        relationships with the people around me.
+                    </p>
+
+                    <p>
+                        My experience includes practical training in
+                        solar energy systems and coaching Under-11 and
+                        Under-12 rugby teams. These experiences have
+                        helped me develop my technical understanding,
+                        leadership, organisation, and mentoring skills.
+                    </p>
+
+                    <p>
+                        I'm also developing my knowledge of web
+                        development through hands-on projects using
+                        HTML, CSS, JavaScript, and GitHub. My goal is
+                        to keep expanding my skills, build meaningful
+                        projects, and pursue opportunities that allow
+                        me to grow both personally and professionally.
+                    </p>
+                </div>
+
+                <aside class="values-card">
+                    <h3>What I Bring</h3>
+
+                    <ul>
+                        <li>A positive and adaptable attitude</li>
+                        <li>Willingness to learn new skills</li>
+                        <li>Leadership and mentoring experience</li>
+                        <li>Practical problem-solving</li>
+                        <li>Teamwork and communication</li>
+                        <li>Commitment to continuous improvement</li>
+                    </ul>
+                </aside>
+
+            </div>
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+            <div class="section-heading">
+                <p class="eyebrow">My abilities</p>
+                <h2>Skills & Competencies</h2>
+
+                <p>
+                    Skills developed through practical experience,
+                    coaching, and ongoing learning.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">💻</div>
+                    <h3>Web Development</h3>
+                    <p>
+                        Building and styling web pages and learning
+                        to create interactive website features.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">☀️</div>
+                    <h3>Solar Energy</h3>
+                    <p>
+                        Practical training in solar installations,
+                        equipment, and system installation procedures.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">🏉</div>
+                    <h3>Leadership & Mentoring</h3>
+                    <p>
+                        Coaching young players, organising training,
+                        and encouraging teamwork and discipline.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">🧩</div>
+                    <h3>Problem-Solving</h3>
+                    <p>
+                        Approaching challenges practically,
+                        adapting to situations, and looking for solutions.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">🤝</div>
+                    <h3>Communication</h3>
+                    <p>
+                        Working with different people, sharing
+                        information, and building positive relationships.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <div class="icon" aria-hidden="true">📈</div>
+                    <h3>Personal Development</h3>
+                    <p>
+                        Managing time, staying motivated, and
+                        continuously developing new competencies.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="tags" aria-label="Technical and professional skills">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">Computer Skills</span>
+                <span class="tag">Photovoltaics</span>
+                <span class="tag">Time Management</span>
+                <span class="tag">Adaptability</span>
+                <span class="tag">Teamwork</span>
+                <span class="tag">Creativity</span>
+                <span class="tag">Mentoring</span>
+            </div>
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section id="experience">
+            <div class="section-heading">
+                <p class="eyebrow">My professional journey</p>
+                <h2>Work Experience</h2>
+            </div>
+
+            <div class="panel">
+
+                <article class="experience-card">
+                    <h3>Solar Installation Trainee</h3>
+
+                    <p class="company">
+                        ZA Solar — Brits
+                    </p>
+
+                    <p class="date">
+                        February 2024 – October 2024
+                    </p>
+
+                    <p>
+                        Gained hands-on training in solar energy systems,
+                        including exposure to the installation of inverters
+                        and solar panels on residential properties.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Developed knowledge of solar system design
+                            and installation procedures.
+                        </li>
+
+                        <li>
+                            Gained practical experience with tools and
+                            equipment used in solar installations.
+                        </li>
+
+                        <li>
+                            Developed problem-solving skills while
+                            addressing practical installation challenges.
+                        </li>
+
+                        <li>
+                            Built an appreciation for renewable energy
+                            and sustainable practices.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <h3>Rugby Coach</h3>
+
+                    <p class="company">
+                        Olienpark — Brits
+                    </p>
+
+                    <p class="date">
+                        January 2024 – August 2024
+                    </p>
+
+                    <p>
+                        Coached local Under-11 and Under-12 rugby teams,
+                        helping young players develop their skills,
+                        teamwork, discipline, and sportsmanship.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Designed training activities suited to
+                            players' ages and skill levels.
+                        </li>
+
+                        <li>
+                            Mentored and encouraged players in their
+                            personal and athletic development.
+                        </li>
+
+                        <li>
+                            Organised practice sessions to improve
+                            technical skills and understanding of the game.
+                        </li>
+
+                        <li>
+                            Promoted teamwork, discipline, and a positive
+                            attitude on and off the field.
+                        </li>
+
+                        <li>
+                            Built relationships with players, parents,
+                            and the local community.
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- EDUCATION -->
+
+        <section id="education">
+            <div class="section-heading">
+                <p class="eyebrow">My learning journey</p>
+                <h2>Education & Training</h2>
+            </div>
+
+            <div class="panel">
+
+                <article class="education-card">
+                    <h3>National Senior Certificate (NSC)</h3>
+
+                    <p>
+                        <strong>High School Brits — Brits</strong>
+                    </p>
+
+                    <p class="date">
+                        January 2019 – dec 2024
+                    </p>
+
+                </article>
+
+                <article class="education-card">
+                    <h3>Web Development Training</h3>
+
+                    <p>
+                        <strong>HyperionDev</strong>
+                    </p>
+
+                    <p>
+                        Practical learning in website development,
+                        programming fundamentals, HTML, CSS,
+                        JavaScript, Git, GitHub, and web technologies.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+            <div class="section-heading">
+                <p class="eyebrow">What I've been building</p>
+                <h2>Projects & Practical Learning</h2>
+
+                <p>
+                    Practical projects help me apply my knowledge
+                    and improve my development skills.
+                </p>
+            </div>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Everyday Market</h3>
+
+                    <p>
+                        A shopping website built with HTML, CSS,
+                        and JavaScript. It includes product cards,
+                        shopping cart functionality, and price totals.
+                    </p>
+
+                    <p>
+                        I also practised using browser storage
+                        to retain cart information and preferences.
+                    </p>
+
+                    <a class="project-link"
+                       href="https://github.com/locherenbergbranden-oss"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View my GitHub profile →
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Personal Web Development</h3>
+
+                    <p>
+                        Ongoing practice creating web pages with
+                        HTML and CSS, improving layouts, making
+                        websites responsive, and learning JavaScript.
+                    </p>
+
+                    <p>
+                        My aim is to keep expanding my portfolio
+                        as I complete more projects.
+                    </p>
+
+                    <a class="project-link"
+                       href="https://github.com/locherenbergbranden-oss"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Explore my GitHub →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- LANGUAGES -->
+
+        <section id="languages">
+            <div class="section-heading">
+                <p class="eyebrow">Communication</p>
+                <h2>Languages</h2>
+            </div>
+
+            <div class="language-list">
+
+                <div class="language">
+                    <strong>English</strong>
+                    <span>Language</span>
+                </div>
+
+                <div class="language">
+                    <strong>Afrikaans</strong>
+                    <span>Language</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <div class="panel contact-panel">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Let's connect</p>
+                    <h2>Contact Me</h2>
+
+                    <p>
+                        I'm interested in learning, developing my skills,
+                        and connecting with people who share an interest
+                        in technology, practical work, and personal growth.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <div class="contact-item">
+                        <h3>Email</h3>
+
+                        <a href="mailto:locherenbergbranden@gmail.com">
+                            locherenbergbranden@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+
+                        <a href="tel:+27843276791">
+                            +27 84 327 6791
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Location</h3>
+
+                        <p>Brits, North West, South Africa</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>GitHub</h3>
+
+                        <a href="https://github.com/locherenbergbranden-oss"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View my GitHub profile
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            &copy; 2026 <strong>Branden Locherenberg</strong>.
+            Personal CV & Portfolio.
+        </p>
+
+        <p>Always learning. Always improving. Always building.</p>
+    </footer>
+
+</body>
+</html>
